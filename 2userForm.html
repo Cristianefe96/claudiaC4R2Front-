@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/registro.js"></script>
+    <title>Registro de usuarios</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <img src="image/Logo_ElCacharrero.jpg" class="card-img-top-left" style="max-width: 10%" alt="Logo Blanquita">
+            <div class="container d-flex justify-content-center " id= "top">
+                <p>
+                    <h1 class="title-center " id="tittle"> EL CACHARRERO</h1>
+                </p>
+            </div>
+            <div id= "guardar1" class= "d-grid d-md-flex justify-content-md-end">
+                <button type ="button" class="btn btn-success" id="guardar" onclick="validarRegistro()">Guardar / Save</button>
+            </div>
+        </nav>
+        <nav class="navbar-center" id= "top">
+            <div class="pt-2">
+                <figure class="text-center">
+                    <blockquote class="navbar-footer">
+                        <p class="text">Tecnología a tu alcance</h2></p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Catalogo de Ventas: <cite title="Source Title">Consigue tu Clon o Personalizado con nosotros</cite>
+                    </figcaption>
+                </figure>
+            </div>
+        </nav>
+        <hr/>
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="userForm" class="form" action="" method="post">
+                        <h3 class="text-center text-info">Formulario de usuario</h3>
+                        <div class="form-group">
+                            <label for="idUser" class="text-info">Id:</label><br/>
+                            <input type="text" name="idUser" id="idUser" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="identificationUser" class="text-info">Identificación:</label><br/>
+                            <input type="text" name="identificationUser" id="identificationUser" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="nameUser" class="text-info">Nombre</label><br/>
+                            <input type="text" name="nameUser" id="nameUser" class="form-control" required />
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="birthtDayUser" class="text-info">Fecha de nacimiento:</label><br/>
+                            <input type="text" name="birthtDayUser" id="birthtDayUser" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <lable for="monthBirthtDayUser" class="text-info">Mes de nacimiento:</lable><br/>
+                            <input type="text" name="monthBirthtDayUser" id="monthBirthtDayUser" class="form-control" required />
+                        </div> -->
+                        <div class="form-group">
+                            <label for="addressUser" class="text-info">Dirección:</label><br/>
+                            <input type="text" name="addressUser" id="addressUser" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="cellPhoneUser" class="text-info">Telefono:</label><br/>
+                            <input type="number" name="cellPhoneUser" id="cellPhoneUser" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="emailUser" class="text-info">Correo:</label><br/>
+                            <input type="email" name="emailUser" id="emailUser" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordUser" class="text-info">Contraseña:</label><br/>
+                            <input type="text" name="passwordUser" id="passwordUser" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="zoneUser" class="text-info">Zona:</label><br/>
+                            <input type="text" name="zoneUser" id="zoneUser" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="tipoUsuario" class="text-info">Tipo de Usuario:</label>
+                            <select name="typeUser" id="typeUser" class="form-control" required>
+                                <option value="">Selecciona un tipo de usuario</option>
+                                <option value="ASE">Asesor Comercial</option>
+                                <option value="COORD">Coordinador de Zona</option>
+                                <option value="ADM">Administrador</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <input type="submit" name="guardarDatos" class="btn btn-dark btn-md" value="Guardar" onclick=""/>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="button" name="submit" class="btn btn-dark btn-md" value="Cancelar" onclick=""/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p class = "text-left mt-2">
+                Regresar a administrar:
+            <a href="Administrador.html">Area de administración</a>
+        </p>
+    </div> 
+</body>
+</html>

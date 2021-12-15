@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/administradorUser.js"></script>
+    <script src="js/administradorProduct.js"></script>
+    <title>El Cacharrero -Admin</title>
+    <link rel="shortcut icon" href="image/Logo_Blanquita.jpg">
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <img src="image/Logo_ElCacharrero.jpg" class="card-img-top-left" style="max-width: 10%" alt="Logo Blanquita">
+            <div class="container d-flex justify-content-center " id= "top">
+                <p>
+                    <h1 class="title-center " id="tittle"> EL CACHARRERO</h1>
+                </p>
+            </div>
+            <div id= "guardar1" class= "d-grid d-md-flex justify-content-md-end">
+                <button type ="button" class="btn btn-success" id="guardar" onclick="validarRegistro()">Guardar / Save</button>
+            </div>
+        </nav>
+        <nav class="navbar-center" id= "top">
+            <div class="pt-2">
+                <figure class="text-center">
+                    <blockquote class="navbar-footer">
+                        <p class="text">Tecnología a tu alcance</h2></p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Catalogo de Ventas: <cite title="Source Title">Consigue tu Clon o Personalizado con nosotros</cite>
+                    </figcaption>
+                </figure>
+            </div>
+        </nav>
+        <hr/>
+        <div class="container-fluid vh-100 " style="margin-top: 20x;">
+            <div>
+                <p class = "text-center mt-2">
+                        Para agregar:
+                    <a href="2userForm.html">Crea un nuevo usuario</a>
+                </p>
+            </div>
+            <div class="container d-flex justify-content-center" style="margin-top: 20px;">
+                <div class="rounded d-flex justify-content-center" >
+                    <div id="tipousuario" class="card text-center mb-2 ">
+                        <div class="card-header">
+                            <h1 class="title-center">USUARIOS</h1> <a href="2userForm.html" class="btn btn-light" >Crear nuevo usuario/ Create new user</a>
+                        </div>
+                        <div id="info">
+                            <table class="table table-hover">
+                                <thead>
+                                    <th>Id</th>
+                                    <th>Identificación / SSN</th>
+                                    <th>Nombre / Name</th>
+                                    <th>Direción / Address</th>
+                                    <th>Celular / Cellphone</th>
+                                    <th>Correo / Email</th>
+                                    <th>Contraseña / Password</th>
+                                    <th>Zona / Zone</th>
+                                    <th>Tipo / Type</th>
+                                    <th colspan="2">Actions / Acciones</th>
+                                </thead>
+                                <tbody id="allItemsUser"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div>
+                <p class = "text-center mt-2">
+                        Para agregar:
+                    <a href="2ProductosForm.html">Crea un nuevo producto</a>
+                </p>
+            </div> 
+            <div class="container d-flex justify-content-center" style="margin-top: 20px;">
+                <div  class="rounded d-flex justify-content-left">
+                    <div  id="tipoproducto" class="card text-center mb-2 ">
+                        <div  class="card-header">
+                            <h1 class="title-center">PRODUCTOS</p></h1> <a href="2ProductosForm.html" class="btn btn-light" >Crear nuevo producto/ Create new product</a>
+                        </div>
+                        <div id="infoProduct">
+                            <table class="table table-hover">
+                                <thead>
+                                    <th>Código / Code</th>
+                                    <th>Marca / Brand</th>
+                                    <th>Procesador / Procesor</th>
+                                    <th>Sistema Operativo / Operative System</th>
+                                    <th>Descripción / Description</th>
+                                    <th>Memoria / Memory</th>
+                                    <th>Disco Duro / Hard Drive</th>
+                                    <th>Disponibilidad / Availability</th>
+                                    <th>Precio / Price</th>
+                                    <th>Cantidad / Quantity</th>
+                                    <th>Foto / Photo</th>
+                                    <th colspan="2">Actions / Acciones</th>
+                                </thead>
+                                <tbody id="allItemsProduct"></tbody>
+                            </table>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="col-md-12 col-sm-50 shadow-lg">
+            <div class="datos" style="margin-top: 10px; margin: 10px;">
+                <div class="text-center">
+                    <form action="" id="actualizarUser" style="display: none;">
+                        <div class="text-center" style="margin-top: 20px; ">
+                            <h1 class="title-center">ACTUALIZAR USUARIO</h1>
+                        <hr/>
+                        <p>Aqui puedes actualizar un usuario</p>
+                        </div> 
+                        <div class="row">
+                            <div class="col">
+                                <fieldset disabled>
+                                <div class="mb-1">
+                                    <label class="form-label">ID</label>
+                                    <div class=" input-group mb-3">
+                                        <span class="input-group-text bg-primary"><i class="bi bi-person-check text-white"></i></span>
+                                        <input type="text" class="form-control" id="idUser" placeholder="CODIGO UNICO">
+                                    </div>
+                                    </div>           
+                                </fieldset>
+                                <div class="mb-1">
+                                    <label class="form-label">Identificación / SSN</label>
+                                    <div class=" input-group mb-3">
+                                        <span class="input-group-text bg-primary"><i class="bi bi-person-badge text-white"></i></span>
+                                        <input type="text" class="form-control" id="identificationUser" placeholder="1111112">
+                                    </div>
+                                </div>
+                                <div class="mb-1">
+                                    <label class="form-label">Nombre / Name</label>
+                                    <div class=" input-group mb-3">
+                                        <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
+                                        <input type="text" class="form-control" id="nameUser" placeholder="Pepito Perez">
+                                    </div>
+                                </div>
+                                <div class="mb-1">
+                                    <label class="form-label">Dirección / Address</label>
+                                    <div class=" input-group mb-3">
+                                        <span class="input-group-text bg-primary"><i class="bi bi-shop text-white"></i></span>
+                                        <input type="text" class="form-control" id="addressUser" placeholder="CR 19-45C 22">
+                                    </div>
+                                </div>
+                                <div class="mb-1">
+                                    <label class="form-label">Celular / Cellphone</label>
+                                    <div class=" input-group mb-3">
+                                        <span class="input-group-text bg-primary"><i class="bi bi-phone text-white"></i></span>
+                                        <input type="text" class="form-control" id="cellPhoneUser" placeholder="31111111">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-1">
+                                    <label for="exampleInputEmail1" class="form-label">Correo Electrónico / Email address</label>
+                                    <div class=" input-group mb-3">
+                                        <span class="input-group-text text-white bg-primary">@</span>
+                                        <input type="email" class="form-control" id="emailUser" aria-describedby="emailHelp" placeholder="name@example.com">
+                                    </div>
+                                </div>
+                                <div class="mb-1">
+                                    <label for="exampleInputEmail1" class="form-label">Zona / Zone</label>
+                                    <div class=" input-group mb-3">
+                                        <span class="input-group-text bg-primary"><i class="bi bi-geo-alt text-white"></i></span>                                        
+                                        <input type="text" class="form-control" id="zoneUser"  placeholder="Zona 1">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-1">
+                                    <label for="exampleInputEmail1" class="form-label">Tipo / Type</label>
+                                    <div class=" input-group mb-3">
+                                        <span class="input-group-text bg-primary"><i class="bi bi-person-circle text-white"></i></span>
+                                        <select name="typeUser" id="typeUser" class="form-control" required>
+                                            <option value="">Selecciona tipo/Select type</option>
+                                            <option value="ASE">Asesor Comercial</option>
+                                            <option value="COORD">Coordinador de Zona</option>
+                                            <option value="ADM">Administrador</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-1">
+                                    <label for="exampleInputPassword1" class="form-label">Contraseña / Password</label>
+                                    <div class=" input-group mb-3">
+                                        <span class="input-group-text bg-primary"><i class="bi bi-key-fill text-white"></i></span>
+                                        <input type="password" class="form-control" id="passwordUser" placeholder="Password">
+                                        <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"><span class="fa fa-eye-slash icon"></span></button>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+                        <div>
+                            <button type ="button" class="btn btn-success" id="actualizar" onclick="putUser()">Actualizar / Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-12 col-sm-50 shadow-lg">
+                <div class="datos" style="margin-top: 10px; margin: 10px;">
+                    <div class="text-center">
+                        <form action="" id="actualizarFormProducto" style="display: none;">
+                            <div class="text-center" style="margin-top: 20px; ">
+                                <h1 class="title-center">ACTUALIZAR PRODUCTO</h1>
+                            <hr/>
+                            <p>Aqui puedes actualizar un producto</p>
+                            </div> 
+                            <div class="row">
+                                <div class="col">
+                                    <fieldset disabled>
+                                    <div class="mb-1">
+                                        <label class="form-label">Código / Code</label>
+                                        <div class=" input-group mb-3">
+                                            <span class="input-group-text bg-primary"><i class="bi bi-person-check text-white"></i></span>
+                                            <input type="text" class="form-control" id="idProd" placeholder="1">                                 
+                                        </div>
+                                        </div>           
+                                    </fieldset>
+                                    <div class="mb-1">
+                                        <label class="form-label">Marca / Brand</label>
+                                        <div class=" input-group mb-3">
+                                            <span class="input-group-text text-white bg-primary">B</span>
+                                            <input type="text" class="form-control" id="brandProd" placeholder="MBP-POWER2">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <label class="form-label">Procesador / Procesor</label>
+                                        <div class=" input-group mb-3">
+                                            <span class="input-group-text bg-primary"><i class="bi bi-tag text-white"></i></span>
+                                            <input type="text" class="form-control" id="procesorProd" placeholder="AMD R7">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <label class="form-label">Sistema Operativo / Operative System</label>
+                                        <div class=" input-group mb-3">
+                                            <span class="input-group-text bg-primary"><i class="bi bi-recycle text-white"></i></span>
+                                            <input type="text" class="form-control" id="osProd" placeholder="Windows">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <label class="form-label">Descripción / Description</label>
+                                        <div class=" input-group mb-3">
+                                            <span class="input-group-text bg-primary"><i class="bi bi-file-richtext text-white"></i></span>
+                                            <input type="text" class="form-control" id="descriptionProd" placeholder="Portatil Pro">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <label class="form-label">Memoria / Memory</label>
+                                        <div class=" input-group mb-3">
+                                            <span class="input-group-text bg-primary"><i class="bi bi-file-richtext text-white"></i></span>
+                                            <input type="text" class="form-control" id="memoryProd" placeholder="32GB Ram">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <label class="form-label">Disco Duro / Hard Drive</label>
+                                        <div class=" input-group mb-3">
+                                            <span class="input-group-text bg-primary"><i class="bi bi-file-richtext text-white"></i></span>
+                                            <input type="text" class="form-control" id="hardDriveProd" placeholder="SSD 1TB">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="exampleInputEmail1" class="form-label">Disponibilidad / Availability</label>
+                                        <div class=" input-group mb-3">
+                                            <span class="input-group-text bg-primary"><i class="bi bi-patch-check text-white"></i></span>                                        
+                                            <select name="avalilability" id="availabilityProd" class="form-control">
+                                                <option value="">Seleccione/Select </option>
+                                                <option value="true">Disponible</option>
+                                                <option value="false">No Disponible</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mb-1">
+                                        <label for="exampleInputEmail1" class="form-label">Precio / Price</label>
+                                        <div class=" input-group mb-3">
+                                            <span class="input-group-text text-white bg-primary"><i class="bi bi-cash-coin text-white"></i></span>
+                                            <input type="price" class="form-control" id="priceProd" placeholder="4'500.000">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="exampleInputEmail1" class="form-label">Cantidad / Quantity</label>
+                                        <div class=" input-group mb-3">
+                                            <span class="input-group-text bg-primary"><i class="bi bi-list-check text-white"></i></span>
+                                            <input type="text" class="form-control" id="quantityProd" placeholder="20">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="exampleInputPassword1" class="form-label">Foto / Photo</label>
+                                        <div class=" input-group mb-3">
+                                            <span class="input-group-text bg-primary"><i class="bi bi-card-image text-white"></i></span>
+                                            <input type="url" class="form-control" id="photographyProd" placeholder="https://www.image.com/clone.jpg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button type ="button" class="btn btn-success" id="actualizarProducto" onclick="putProduct()">Actualizar / Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> 
+            <footer class="footer d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                        <svg class="bi" width="30" height="24">
+                            <use xlink:href="#bootstrap" />
+                        </svg>
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/registro.js"></script>
+    <title>Registro de Productos</title>
+    <link rel="shortcut icon" href="image/Logo_Blanquita.jpg">
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <img src="image/Logo_ElCacharrero.jpg" class="card-img-top-left" style="max-width: 10%" alt="Logo Blanquita">
+            <div class="container d-flex justify-content-center " id= "top">
+                <p>
+                    <h1 class="title-center " id="tittle"> EL CACHARRERO</h1>
+                </p>
+            </div>
+            <div id= "guardar1" class= "d-grid d-md-flex justify-content-md-end">
+                <button type ="button" class="btn btn-success" id="guardar" onclick="validarRegistro()">Guardar / Save</button>
+            </div>
+        </nav>
+        <nav class="navbar-center" id= "top">
+            <div class="pt-2">
+                <figure class="text-center">
+                    <blockquote class="navbar-footer">
+                        <p class="text">Tecnología a tu alcance</h2></p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Catalogo de Ventas: <cite title="Source Title">Consigue tu Clon o Personalizado con nosotros</cite>
+                    </figcaption>
+                </figure>
+            </div>
+        </nav>
+        <hr/>
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="userForm" class="form" action="" method="post">
+                        <h3 class="text-center text-info">Registro de Productos</h3>
+                        <div class="form-group">
+                            <label for="idProd" class="text-info">Id:</label><br/>
+                            <input type="text" name="idProd" id="idProd" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="brandProd" class="text-info">Marca:</label><br/>
+                            <input type="text" name="brandProd" id="brandProd" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="procesorProd" class="text-info">Procesador:</label><br/>
+                            <input type="text" name="procesorProd" id="procesorProd" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="osProd" class="text-info">Sistema Operativo:</label><br/>
+                            <input type="text" name="osProd" id="osProd" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <lable for="descriptionProd" class="text-info">Descripción:</lable><br/>
+                            <input type="text" name="descriptionProd" id="descriptionProd" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <lable for="memoryProd" class="text-info">Memoria:</lable><br/>
+                            <input type="text" name="memoryProd" id="memoryProd" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <lable for="hardDriveProd" class="text-info">Disco Duro:</lable><br/>
+                            <input type="text" name="hardDriveProd" id="hardDriveProd" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="availabilityProd" class="text-info">Disponibilidad:</label><br/>
+                            <select name="typeUser" id="typeUser" class="form-control" required>
+                                <option value=""></option>
+                                <option value="disponible">Disponible</option>
+                                <option value="noDisponible">No Disponible</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="priceProd" class="text-info">Precio:</label><br/>
+                            <input type="text" name="priceProd" id="priceProd" class="form-control" required />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quantityProd" class="text-info">Cantidad:</label><br/>
+                            <input type="number" name="quantityProd" id="quantityProd" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="photographyProd" class="text-info">Fotografía:</label><br/>
+                            <input type="text" name="photographyProd" id="photographyProd" class="form-control" required />
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <input type="submit" name="guardarDatos" class="btn btn-dark btn-md" value="Guardar" onclick=""/>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="button" name="submit" class="btn btn-dark btn-md" value="Cancelar" onclick=""/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p class = "text-center mt-2">
+                Regresar a administrar:
+            <a href="Administrador.html">Area de administración</a>
+        </p>
+    </div> 
+</body>
+</html>
